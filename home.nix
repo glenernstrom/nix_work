@@ -91,7 +91,9 @@
       lua-language-server
       ripgrep
       fd
+      nil
       wl-clipboard
+
     ];
     
 
@@ -104,10 +106,6 @@
 #        config = toLuaFile ./user/nvim/plugin/lsp.lua;
 #      }
 
-#       {
-#        plugin = tokyonight-nvim;
-#	config = "colorscheme tokyonight";
-#       }
 
       {
         plugin = gruvbox-nvim;
@@ -115,11 +113,11 @@
       }
       
       neodev-nvim
-      nvim-cmp
-#      {
-#       plugin = nvim-cmp;
-#       config = toLuaFile ./user/nvim/plugin/cmp.lua;
-#      }
+
+   {
+       plugin = nvim-cmp;
+       config = toLuaFile ./user/nvim/plugin/cmp.lua;
+    }
 
       { 
         plugin = telescope-nvim;
@@ -149,7 +147,7 @@
       
       {
          plugin = lualine-nvim;
-	 config = toLuaFile ./user/nvim/plugin/lualine.lua;
+	     config = toLuaFile ./user/nvim/plugin/lualine.lua;
       }
 
       nvim-lspconfig
