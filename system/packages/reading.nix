@@ -2,7 +2,7 @@
 
 {
   # Packages for reading
-  environment.systemPackages [
+  environment.systemPackages = [
     pkgs.foliate
     pkgs.calibre
     pkgs.cozy

@@ -2,7 +2,7 @@
 
 {
   # Suite of multimedia apps
-  environment.systemPackages [
+  environment.systemPackages =  [
     pkgs.vlc
 	pkgs.kdePackages.kdenlive
 	pkgs.shotcut

@@ -1,7 +1,7 @@
 {config, pkgs, ... }:
 
 {
-  enironment.systemPackages [
+  enironment.systemPackages = [
 	# telescope dependencies
 	pkgs.ripgrep
     pkgs.fd

@@ -1,7 +1,7 @@
 {config, pkgs, ... }:
 
 {
-  environment.systemPackages [
+  environment.systemPackages = [
     pkgs.aisleriot
 	pkgs.lutris
 	pkgs.wesnoth
