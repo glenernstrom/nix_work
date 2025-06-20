@@ -9,6 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system/nvidia.nix
+##	  ./system/packages/nvim.nix
+	  ./system/packages/reading.nix
+	  ./system/packages/multimedia.nix
+	  ./system/packages/games.nix
     ];
 
   # Enable flakes
@@ -99,8 +103,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; 
   
     let 
@@ -123,11 +125,9 @@
    pymol
    fiji
 
-   # CLI
    wget
    git
-
- 
+   
    # TUI
    lynx
    yazi # file browser
@@ -158,7 +158,6 @@
 
    # Internet
    mumble
-   obs-studio
    newsflash
    fractal
    element-desktop
@@ -186,17 +185,6 @@
    logseq
    texliveFull
 
-   # Sound & Video
-   vlc
-   kdePackages.kdenlive
-   shotcut
-
-   # Reading
-   foliate
-   calibre
-   cozy
-   papers
-
    # Utilities
    impression
    ghostty
@@ -211,18 +199,10 @@
    tesseract
    hplip
 
-   # Games
-   aisleriot
-   lutris
-   wesnoth
-   warzone2100
-
    # Programming
    python313Packages.jupyterlab # for learning, not projects
    vscode-fhs # not for complex projects
    
-    
-      
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

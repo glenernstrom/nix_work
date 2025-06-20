@@ -6,6 +6,8 @@
    nixpkgs.url = "nixpkgs/nixos-unstable";
    home-manager.url = "github:nix-community/home-manager/master";
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+   nixvim.url = "github:nix-community/nixvim";
+   nixvim.inputs.nixpkgs.follows = "nixpkgs";	
  };
 
 
@@ -25,8 +27,7 @@
      homeConfigurations."ernstrom" = 
        inputs.home-manager.lib.homeManagerConfiguration {
        inherit pkgs;
-       modules = [ ./home.nix ];
-       extraSpecialArgs = { inherit inputs; };  
-     };
+       modules = [ ./home.nix ];  
     };
+  };
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs , ... }:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -74,27 +74,11 @@
 
   # Let's configure neovim!
 
-  programs.neovim =
-   let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua <<EOF\n${builtins.readFile file}\nEOF\n";
-   in
-  {
+  programs.neovim = {
     enable = true;
 
     viAlias = true;
     vimAlias = true;
-    vimdiffAlias = true;
-
-     extraPackages = with pkgs; [
-      
-      lua-language-server
-      ripgrep
-      fd
-      nil
-      wl-clipboard
-
-    ];
     
 
     plugins = with pkgs.vimPlugins; [
